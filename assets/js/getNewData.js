@@ -9,7 +9,7 @@ function getNewData() {
 
     let r = [];
     for (let i = start; i < end; i++) {
-        r.push({id: i, text: i+' row'})
+        r.push({id: i, text: i+' row '+(new Date()).getTime()})
     }
 
     return r

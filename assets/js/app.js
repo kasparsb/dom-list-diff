@@ -27,6 +27,8 @@ function diff(newData, currentData) {
 
             // Pārceļam DOM elementa referenci uz jauno datu masīvu
             data.el = found.el;
+
+            data.el.innerHTML = data.text;
         }
         // Nav atrasts, jāliek iekšā
         else {
@@ -42,6 +44,10 @@ function diff(newData, currentData) {
 
 function loadData() {
     currentData = diff(getNewData(), currentData);
+}
+
+window.setNewData = function(newData) {
+    currentData = diff(newData, currentData);
 }
 
 clickp('[name=refresh]', loadData)
